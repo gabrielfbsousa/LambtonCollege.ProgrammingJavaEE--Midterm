@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>CSD4464-Midterm</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{productController.products}" var="p">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{p.productId}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{p.name}
+                </h:column>            
+                <h:column>
+                    <f:facet name="header">Vendor's ID</f:facet>
+                        #{p.vendorId}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Vendor's Name</f:facet>
+                        #{p.vendor.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Vendor's Contact Name</f:facet>
+                        #{p.vendor.vendorContactName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Vendor's Phone</f:facet>
+                        #{p.vendor.vendorPhone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Delete product</f:facet>
+                    <h:commandButton value="Delete this product" action="#{productController.deleteProduct(p)}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Edit product</f:facet>
+                    <h:commandButton value="Edit this product" action="#{productController.editProduct(p)}"/>
+                </h:column>
+            </h:dataTable>
+
+            <h:dataTable value="#{vendorController.vendors}" var="v">
+                <h:column>
+                    <f:facet name="header">Vendor's ID</f:facet>
+                        #{v.vendorId}
+                </h:column>   
+                <h:column>
+                    <f:facet name="header">Vendor's Name</f:facet>
+                        #{v.name}
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">Vendor's Contact Name</f:facet>
+                        #{v.vendorContactName}
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">Vendor's Phone Number</f:facet>
+                        #{v.vendorPhone}
+                </h:column> 
+            </h:dataTable>
+            <h:link outcome="addProduct" value="Add Product" />
+            <h:link outcome="addVendor" value="Add Vendor" />
+        </h:form>
+    </h:body>
+</html>
+
