@@ -1,4 +1,4 @@
-![College](https://img.shields.io/badge/Lambton%20College)
+![College](https://img.shields.io/badge/College-Lambton_College-blue)
 ![Language](https://img.shields.io/badge/Language-Java-orange)
 ![IDE](https://img.shields.io/badge/IDE-Netbeans-lightblue)
 
